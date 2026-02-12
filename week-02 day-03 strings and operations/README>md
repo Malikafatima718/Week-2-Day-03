@@ -1,0 +1,48 @@
+# Week-2-Day-03
+python program on strings and operations
+# String Operations in Python
+# Input string
+text = input("Enter a string: ")
+# 1. Reverse a String
+reversed_string = text[::-1]
+print("Reversed String:", reversed_string)
+
+# 2. Check Palindrome
+if text == reversed_string:
+    print("The string is a Palindrome.")
+else:
+    print("The string is not a Palindrome.")
+
+# 3. Count Vowels and Consonants
+vowels = "aeiouAEIOU"
+vowel_count = 0
+consonant_count = 0
+
+for char in text:
+    if char.isalpha():  # Check if character is alphabet
+        if char in vowels:
+            vowel_count += 1
+        else:
+            consonant_count += 1
+
+print("Number of Vowels:", vowel_count)
+print("Number of Consonants:", consonant_count)
+
+# 4. Character Frequency
+frequency = {}
+
+for char in text:
+    if char in frequency:
+        frequency[char] += 1
+    else:
+        frequency[char] = 1
+
+print("Character Frequency:")
+for key, value in frequency.items():
+    print(key, ":", value)
+
+# 5. String Slicing
+print("First 3 characters:", text[:3])
+print("Last 3 characters:", text[-3:])
+print("String from index 2 to 5:", text[2:6])
+print("String with step 2:", text[::2])
